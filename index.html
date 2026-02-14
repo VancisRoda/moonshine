@@ -1,32 +1,570 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Be My Valentine</title>
-    <link rel="stylesheet" href="css/valentine.css" />
-  </head>
-  <body>
-    <div id="valentineQuestion"><b>Will you be my valentine?</b></div>
-    <button class="answerButton" onclick="location.href='thankyou.html'">
-      Yes
-    </button>
-    <button class="answerButton" id="noButton">I no no wanna o(╥﹏╥)o</button>
-    <br />
-    <img src="please.png" height="498px" width="150px" alt="cat asking question" class="responsive" />
+<html lang="es">
 
-    <script>
-      document
-        .getElementById("noButton")
-        .addEventListener("click", function () {
-          var yesButton = document.querySelector(
-            'button[onclick*="thankyou.html"]'
-          );
-          var currentFontSize = parseInt(
-            window.getComputedStyle(yesButton).fontSize
-          );
-          yesButton.style.fontSize = currentFontSize + 10 + "px"; // Increase font size by 5px
-        });
-    </script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Resolución del Consejo de Seguridad — San Valentín 2026</title>
+  <meta name="description" content="Evaluación de desempeño y tratado bilateral. Documento clasificado." />
+  <link rel="stylesheet" href="css/app.css" />
+  <link rel="stylesheet" href="css/puzzle.css" />
+  <style>
+    /* ====== Scoped Flower CSS for Screen 5 Only ====== */
+    #screen-5 .flower {
+      position: relative;
+    }
+
+    #screen-5 .flower__glass {
+      width: 20vmin;
+      height: 30vmin;
+      background-image: linear-gradient(to left, #142544, #1a9092);
+      clip-path: polygon(0 0, 100% 0, 85% 100%, 15% 100%);
+      opacity: .8;
+      position: relative;
+      margin: 0 auto;
+    }
+
+    #screen-5 .flower__glass::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      background-color: #182843;
+      width: 100%;
+      height: 2vmin;
+    }
+
+    #screen-5 .flower__glass::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      background-image: linear-gradient(to left, #142544, #1b6d6e);
+      width: 100%;
+      height: 15vmin;
+    }
+
+    #screen-5 .f-wrapper {
+      position: absolute;
+      left: 45%;
+      bottom: 2vmin;
+    }
+
+    #screen-5 .f-wrapper--2 {
+      left: 50%;
+      bottom: 5%;
+      transform-origin: 10% left;
+      transform: rotate(20deg);
+    }
+
+    #screen-5 .f-wrapper--3 {
+      left: 30%;
+      bottom: 5%;
+      transform-origin: 10% left;
+      transform: rotate(-10deg);
+    }
+
+    #screen-5 .f-wrapper--3 .flower__line {
+      height: 45vmin;
+      position: relative;
+      background-image: linear-gradient(to top, #142544, #104d4e);
+    }
+
+    #screen-5 .f-wrapper--3 .flower__line::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 6vmin;
+      height: 6vmin;
+      transform: translate(-69%, -30%) rotate(-5deg);
+      border-radius: 10vmin 10vmin 0 0;
+      border: 2vmin solid #104d4e;
+      border-bottom: transparent;
+      border-left: transparent;
+    }
+
+    #screen-5 .f-wrapper--3 .flower__line::before {
+      content: '';
+      position: absolute;
+      left: -40%;
+      top: -1%;
+      width: 6vmin;
+      height: 2vmin;
+      transform-origin: right;
+      transform: translate(-100%, -80%) rotate(-20deg);
+      background-color: #104d4e;
+      border-radius: 2vmin;
+    }
+
+    #screen-5 .f-wrapper--2 .flower__line {
+      height: 45vmin;
+    }
+
+    #screen-5 .f-wrapper--2 .f {
+      transform: translateX(-50%) rotate(20deg);
+    }
+
+    #screen-5 .f-wrapper--3 .f {
+      transform: translate(-350%, -50%) rotate(-120deg);
+    }
+
+    #screen-5 .f-wrapper--2 .flower__leaf:not(:first-child) {
+      width: 3.8vmin;
+      height: 10vmin;
+      background-image: linear-gradient(to bottom, #ff43b6, #c22887, #1a233a 99%);
+    }
+
+    #screen-5 .f-wrapper--3 .flower__leaf:not(:first-child) {
+      width: 3.8vmin;
+      height: 10vmin;
+      background-image: linear-gradient(to bottom, #ad2be0, #712291, #1a233a 99%);
+    }
+
+    #screen-5 .f-wrapper--3 .flower__leaf--1 {
+      width: 8vmin;
+      height: 10vmin;
+      bottom: 2vmin;
+      background-color: #ad2be0;
+    }
+
+    #screen-5 .f-wrapper--2 .flower__leaf--1 {
+      width: 8vmin;
+      height: 10vmin;
+      bottom: 2vmin;
+      background-color: #de118b;
+    }
+
+    #screen-5 .f-wrapper--2 .f .flower__leaf--8 {
+      width: 10vmin;
+      height: 9vmin;
+      bottom: 3vmin;
+      left: -30%;
+      transform: rotate(-50deg);
+      background-image: linear-gradient(to left bottom, #ff43b6, #4d1337);
+    }
+
+    #screen-5 .f-wrapper--3 .f .flower__leaf--8 {
+      width: 10vmin;
+      height: 9vmin;
+      left: -10% !important;
+      background-image: linear-gradient(to left bottom, #ad2be0, #712291);
+    }
+
+    #screen-5 .flower__line {
+      width: 2vmin;
+      height: 56vmin;
+      background-image: linear-gradient(to left top, #82fdff 20%, #142544, #104d4e);
+      border-radius: 4vmin;
+    }
+
+    #screen-5 .f {
+      position: absolute;
+      top: 1vmin;
+      left: 50%;
+      transform: translateX(-50%) rotate(-10deg);
+      width: 2vmin;
+      height: 2vmin;
+    }
+
+    #screen-5 .flower__leaf {
+      position: absolute;
+      left: 50%;
+      bottom: 2vmin;
+      transform: translateX(-50%);
+      width: 5vmin;
+      height: 14vmin;
+      background-image: linear-gradient(to bottom, #ffa085, #fa7373, #1a233a 99%);
+      clip-path: ellipse(50% 50% at 50% 50%);
+      transform-origin: center bottom;
+      animation: open-flower 2s 1s backwards;
+    }
+
+    #screen-5 .flower__leaf--1 {
+      width: 10vmin;
+      height: 12vmin;
+      bottom: 3vmin;
+      border-radius: 50% 50% 50% 50% / 80% 80% 20% 20%;
+      background-color: #e24f5f;
+      background-image: none;
+      animation: open-flowe--middle 1.4s 1s backwards;
+    }
+
+    #screen-5 .flower__leaf--2 {
+      transform: translateX(-50%) rotate(-30deg);
+    }
+
+    #screen-5 .flower__leaf--3 {
+      transform: translateX(-50%) rotate(-50deg);
+    }
+
+    #screen-5 .flower__leaf--4 {
+      transform: translateX(-50%) rotate(-70deg);
+    }
+
+    #screen-5 .flower__leaf--5 {
+      transform: translateX(-50%) rotate(30deg);
+    }
+
+    #screen-5 .flower__leaf--6 {
+      transform: translateX(-50%) rotate(50deg);
+    }
+
+    #screen-5 .flower__leaf--7 {
+      transform: translateX(-50%) rotate(70deg);
+    }
+
+    #screen-5 .flower__leaf--8 {
+      width: 13vmin;
+      height: 11vmin;
+      bottom: 6vmin;
+      left: -30%;
+      clip-path: none;
+      border-radius: 10vmin 2vmin 10vmin 2vmin;
+      transform: rotate(-55deg);
+      background-image: linear-gradient(to left bottom, #ffa085, #eb8b8b, #492f2f 98%);
+    }
+
+    #screen-5 .flower__fall-down--yellow {
+      animation: flower-fall-down-yellow 8s 1.2s linear forwards;
+    }
+
+    #screen-5 .flower__fall-down--pink {
+      animation: flower-fall-down-pink 5s 1.2s linear forwards;
+    }
+
+    #screen-5 .flower__fall-down--purple {
+      bottom: 4vmin;
+      animation: flower-fall-down-purple 6s 1.2s linear forwards, flower-falling 6s 7.2s linear infinite;
+    }
+
+    @keyframes open-flower {
+      0% {
+        transform: translateX(-50%) rotate(0);
+      }
+    }
+
+    @keyframes open-flowe--middle {
+      0% {
+        opacity: 0;
+        transform: translateX(-50%) scale(0);
+      }
+    }
+
+    @keyframes flower-fall-down-pink {
+      0% {
+        transform: rotate(-55deg);
+      }
+
+      50% {
+        transform: rotateX(-100deg);
+      }
+
+      100% {
+        transform: translate(2vmin, 28vmin);
+      }
+    }
+
+    @keyframes flower-fall-down-yellow {
+      0% {
+        transform: rotate(-55deg);
+      }
+
+      50% {
+        bottom: 3vmin;
+        transform: rotateX(-100deg);
+      }
+
+      100% {
+        transform: translate(2vmin, 70vmin) rotate(150deg);
+      }
+    }
+
+    @keyframes flower-fall-down-purple {
+      0% {
+        transform: rotate(-50deg);
+      }
+
+      25% {
+        bottom: 1vmin;
+        transform: rotateX(-100deg);
+      }
+
+      50% {
+        transform: translate(-30vmin, 2vmin) rotate(90deg);
+      }
+
+      75% {
+        transform: translate(-34vmin, -2vmin);
+      }
+
+      100% {
+        transform-origin: center;
+        transform: translate(-34vmin, -2vmin) rotateY(-80deg) rotateX(35deg);
+      }
+    }
+
+    @keyframes flower-falling {
+
+      0%,
+      100% {
+        transform-origin: center;
+        transform: translate(-34vmin, -2vmin) rotateY(-80deg) rotateX(35deg);
+      }
+
+      25% {
+        transform-origin: center;
+        transform: translate(-34.4vmin, -2vmin) rotateY(-84deg) rotateX(35deg);
+      }
+
+      50% {
+        transform-origin: center;
+        transform: translate(-32vmin, -4.2vmin) rotateY(-80deg) rotateX(35deg);
+      }
+
+      75% {
+        transform-origin: center;
+        transform: translate(-36vmin, 1.1vmin) rotateY(-80deg) rotateX(35deg);
+      }
+    }
+
+    /* Flower container sizing for Screen 5 */
+    .flower-container {
+      position: relative;
+      margin-top: 20px;
+      transform: scale(0.55);
+      transform-origin: center bottom;
+      height: 40vmin;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Background Music -->
+  <audio id="bg-music" src="audio/libertango.mp3" loop preload="auto"></audio>
+  <button id="music-btn" class="music-btn" aria-label="Activar música">🎵</button>
+
+  <!-- ============================== -->
+  <!-- SCREEN 1 - FIREWALL PUZZLE     -->
+  <!-- ============================== -->
+  <section id="screen-1" class="screen active">
+    <div class="tinder-header">
+      <span class="fire-icon">🔥</span> <span class="app-name">MONUFD 2025</span>
+    </div>
+
+    <!-- Tinder Interface -->
+    <div class="tinder-wrapper">
+      <div class="tinder-card-container" id="tinder-card-container">
+        <!-- Cards injected by JS -->
+      </div>
+
+      <div class="match-banner" id="match-banner">
+        <span>It's a Match! 💘</span>
+      </div>
+
+      <div class="tinder-actions">
+        <button class="btn btn-primary btn-chat" onclick="showScreen(2)">Abrir Chat 💬</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== -->
+  <!-- SCREEN 2 - LA PROPUESTA        -->
+  <!-- ============================== -->
+  <section id="screen-2" class="screen">
+    <span class="screen-subtitle">Documento N° 2026/CSNU/14-02</span>
+    <h1 class="screen-title">Resolución del<br />Consejo de Seguridad</h1>
+    <p class="screen-body">
+      <em>Considerando</em> nuestro historial y tratados bilaterales desde la
+      <strong>Facultad de Derecho UBA</strong>, y <em>recordando</em> aquella sesión
+      donde <strong>Bielorrusia</strong> y <strong>Japón</strong> acercaron posiciones...
+    </p>
+    <p class="screen-body"
+      style="font-family: var(--font-display); font-size: clamp(1.1rem, 3.5vw, 1.4rem); color: var(--color-primary-dark);">
+      ¿Querés ser la "novia de facto" de Vancis<br />este San Valentín? 💗
+    </p>
+
+    <div class="button-group">
+      <button class="btn btn-primary" id="btn-approve">
+        Aprobar moción - SÍ 💕
+      </button>
+      <button class="btn btn-veto" id="btn-veto">
+        Vetar resolución - NO
+      </button>
+    </div>
+  </section>
+
+  <!-- ============================== -->
+  <!-- SCREEN 3 - CLÁUSULA CANELA     -->
+  <!-- ============================== -->
+  <section id="screen-3" class="screen">
+    <span class="screen-subtitle">Protocolo Adicional</span>
+    <h1 class="screen-title">Cláusula Canela 🐕</h1>
+
+    <img src="img/Canela.png" alt="Canela, la perrita salchicha" class="canela-img"
+      onerror="this.style.background='linear-gradient(135deg,#FFD6D6,#FFB6C1)'; this.style.display='flex'; this.alt='🌭🐕 Canela';" />
+
+    <p class="screen-body">
+      Como modelistas <em>enfermonus</em>, busquemos la resolución pacífica de las
+      controversias y la ratificación de los tratados internacionales vigentes.
+    </p>
+    <p class="screen-body" style="font-family: var(--font-display); color: var(--color-primary-dark);">
+      ¿Aceptás que adopte legal y emocionalmente a la salchicha?
+    </p>
+
+    <div class="button-row">
+      <button class="btn btn-affirm btn-canela">Obvio, firmo acá ✍️</button>
+      <button class="btn btn-affirm btn-canela">Ya es tuya legalmente 📜</button>
+    </div>
+  </section>
+
+  <!-- ============================== -->
+  <!-- SCREEN 4 - LOGÍSTICA OPERATIVA -->
+  <!-- ============================== -->
+  <section id="screen-4" class="screen">
+    <span class="screen-subtitle">Planificación Logística</span>
+    <h1 class="screen-title">Logística Operativa ✈️</h1>
+
+    <!-- Flight Route -->
+    <div class="flight-route">
+      <svg viewBox="0 0 400 120" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:380px;">
+        <!-- Cities -->
+        <circle cx="50" cy="65" r="6" fill="#FF6B6B" />
+        <text x="50" y="95" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#5A3E3E"
+          font-weight="600">Tucumán</text>
+        <circle cx="350" cy="65" r="6" fill="#FF6B6B" />
+        <text x="350" y="95" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#5A3E3E"
+          font-weight="600">Buenos Aires</text>
+        <!-- Dotted Route -->
+        <path d="M 60 65 Q 200 10 340 65" stroke="#FFB6C1" stroke-width="2" stroke-dasharray="6 4" fill="none" />
+        <!-- Airplane -->
+        <text x="200" y="30" text-anchor="middle" font-size="20" transform="rotate(-8, 200, 30)">✈️</text>
+        <!-- Distance -->
+        <text x="200" y="112" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#8B6B6B"
+          font-weight="500">1.245 km de distancia</text>
+      </svg>
+    </div>
+
+    <!-- Food Selection -->
+    <h3 class="section-label">🍽️ Seleccione la provisión de alimentos para la cumbre bilateral:</h3>
+    <div class="food-grid">
+      <div class="food-card highlight" data-food="trattoria">
+        <span class="food-emoji">🍝</span>
+        <div class="food-info">
+          <h4>Comer pastas en Trattoria Mamma Mia</h4>
+          <p>Salta, Argentina - La única opción sensata</p>
+        </div>
+      </div>
+      <div class="food-card trap" data-food="india">
+        <span class="food-emoji">🫕</span>
+        <div class="food-info">
+          <h4>Comer comida callejera en India</h4>
+          <p>Nueva Delhi - Especias nivel "no vas a poder hablar"</p>
+        </div>
+      </div>
+      <div class="food-card trap" data-food="israel">
+        <span class="food-emoji">🧀</span>
+        <div class="food-info">
+          <h4>Comer queso gruyère en Israel</h4>
+          <p>Tel Aviv - Logística cuestionable</p>
+        </div>
+      </div>
+      <div class="food-card trap" data-food="bolivia">
+        <span class="food-emoji">🫓</span>
+        <div class="food-info">
+          <h4>Comer chipá en La Paz, Bolivia</h4>
+          <p>3.640 m.s.n.m. - Falta de oxígeno incluida</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Activities -->
+    <h3 class="section-label" style="margin-top:32px;">📋 Agenda oficial post-cena:</h3>
+    <ol class="activities-list">
+      <li>
+        <span class="activity-num">1</span>
+        <span>Debate del Modelo ONU en el living<br /><small style="color:#8B6B6B;">- Negociación de tratados y
+            resolución de conflictos domésticos -</small></span>
+      </li>
+      <li>
+        <span class="activity-num">2</span>
+        <span>Configurar servidores y charlar 💻<br /><small style="color:#8B6B6B;">- Usando auriculares con ANC para
+            estar cómodos -</small></span>
+      </li>
+      <li>
+        <span class="activity-num">3</span>
+        <span>Paseo protocolar con Canela 🐾<br /><small style="color:#8B6B6B;">- Misión diplomática canina de
+            reconocimiento del perímetro -</small></span>
+      </li>
+    </ol>
+
+    <div class="button-group" style="margin-top: 32px;">
+      <button class="btn btn-primary" id="btn-continue-final">Ratificar y continuar 📜</button>
+    </div>
+  </section>
+
+  <!-- ============================== -->
+  <!-- SCREEN 5 - CONFIRMACIÓN FINAL  -->
+  <!-- ============================== -->
+  <section id="screen-5" class="screen screen-final">
+    <div class="final-text">
+      ✅ Auditoría exitosa y tratado ratificado.<br /><br />
+      Nos vemos pronto para ejecutar la resolución.<br /><br />
+      <em>Fin del comunicado.</em> 💗
+    </div>
+
+    <!-- Flower Animation (from original repo) -->
+    <div class="flower-container">
+      <div class="flower">
+        <div class="f-wrapper">
+          <div class="flower__line"></div>
+          <div class="f">
+            <div class="flower__leaf flower__leaf--1"></div>
+            <div class="flower__leaf flower__leaf--2"></div>
+            <div class="flower__leaf flower__leaf--3"></div>
+            <div class="flower__leaf flower__leaf--4"></div>
+            <div class="flower__leaf flower__leaf--5"></div>
+            <div class="flower__leaf flower__leaf--6"></div>
+            <div class="flower__leaf flower__leaf--7"></div>
+            <div class="flower__leaf flower__leaf--8 flower__fall-down--yellow"></div>
+          </div>
+        </div>
+        <div class="f-wrapper f-wrapper--2">
+          <div class="flower__line"></div>
+          <div class="f">
+            <div class="flower__leaf flower__leaf--1"></div>
+            <div class="flower__leaf flower__leaf--2"></div>
+            <div class="flower__leaf flower__leaf--3"></div>
+            <div class="flower__leaf flower__leaf--4"></div>
+            <div class="flower__leaf flower__leaf--5"></div>
+            <div class="flower__leaf flower__leaf--6"></div>
+            <div class="flower__leaf flower__leaf--7"></div>
+            <div class="flower__leaf flower__leaf--8 flower__fall-down--pink"></div>
+          </div>
+        </div>
+        <div class="f-wrapper f-wrapper--3">
+          <div class="flower__line"></div>
+          <div class="f">
+            <div class="flower__leaf flower__leaf--1"></div>
+            <div class="flower__leaf flower__leaf--2"></div>
+            <div class="flower__leaf flower__leaf--3"></div>
+            <div class="flower__leaf flower__leaf--4"></div>
+            <div class="flower__leaf flower__leaf--5"></div>
+            <div class="flower__leaf flower__leaf--6"></div>
+            <div class="flower__leaf flower__leaf--7"></div>
+            <div class="flower__leaf flower__leaf--8 flower__fall-down--purple"></div>
+          </div>
+        </div>
+        <div class="flower__glass"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Scripts -->
+  <script src="js/app.js"></script>
+  <script src="js/puzzle.js"></script>
+  <script src="js/evade.js"></script>
+</body>
+
 </html>
